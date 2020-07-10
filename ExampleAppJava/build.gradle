@@ -1,3 +1,7 @@
+plugins {
+    id("com.apollographql.apollo").version("2.2.2")
+}
+
 apply plugin: 'com.android.application'
 
 android {
@@ -16,6 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -26,4 +34,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     compile project(path: ':vss-sdk-lib')
+    implementation("com.apollographql.apollo:apollo-runtime:2.2.2")
 }
