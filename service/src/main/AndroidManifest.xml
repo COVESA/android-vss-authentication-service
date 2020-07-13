@@ -7,6 +7,12 @@
         android:description="@string/dummy_permission_description"
         android:protectionLevel="normal" />
 
+    <permission
+        android:name="org.genivi.vss.permission.FUEL_SYSTEM_READ"
+        android:label="@string/fuel_system_permission_label"
+        android:description="@string/fuel_system_permission_description"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:persistent="true"

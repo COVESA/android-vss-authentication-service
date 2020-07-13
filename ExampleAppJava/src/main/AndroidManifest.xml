@@ -3,6 +3,7 @@
     package="org.genivi.vss.authenticationservice.example">
 
     <uses-permission android:name="org.genivi.vss.permission.DUMMY_PROP_READ"/>
+    <uses-permission android:name="org.genivi.vss.permission.FUEL_SYSTEM_READ"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 

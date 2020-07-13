@@ -2,4 +2,6 @@
     <string name="app_name">AuthenticationService</string>
     <string name="dummy_permission_label">Read value of Dummy</string>
     <string name="dummy_permission_description">Allows the application to read or subscribe for the value of Dummy</string>
+    <string name="fuel_system_permission_label">Read value of fuel system parameters</string>
+    <string name="fuel_system_permission_description">Allows the application to read or subscribe for the values from fuel system VSS tree</string>
 </resources>
