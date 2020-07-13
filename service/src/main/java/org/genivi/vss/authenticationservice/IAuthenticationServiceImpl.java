@@ -38,8 +38,10 @@ public class IAuthenticationServiceImpl extends IAuthenticationService.Stub {
             Log.d(TAG, "Permissions: " + Arrays.toString(new List[]{grantedPermissions}));
 
         } catch (PackageManager.NameNotFoundException e) {
+            // TODO decide when handle this exception
             e.printStackTrace();
         }
+        // TODO Make the key shared between the server and client or change the algo to asymmetric
         Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
         Log.d(TAG, "Key string: " + Encoders.BASE64.encode(key.getEncoded()));
 
@@ -56,6 +58,7 @@ public class IAuthenticationServiceImpl extends IAuthenticationService.Stub {
         // using corresponding requestedPermissionsFlags array, filter out the non-granted ones
         for (int i = 0; i < packageInfo.requestedPermissions.length; i++) {
             if ((packageInfo.requestedPermissionsFlags[i] & PackageInfo.REQUESTED_PERMISSION_GRANTED) == PackageInfo.REQUESTED_PERMISSION_GRANTED) {
+                // TODO Filter out the non-genivi-vss permissions
                 permissionList.add(packageInfo.requestedPermissions[i]);
             }
         }

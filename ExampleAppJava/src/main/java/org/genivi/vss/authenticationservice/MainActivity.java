@@ -81,9 +81,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void retrieveValue(String token, GetFuelDataCallback callback) {
+        // TODO Pass the token to the query
         mApolloClient.query(new GetFuelDataQuery()).enqueue(new ApolloCall.Callback<GetFuelDataQuery.Data>() {
             @Override
             public void onResponse(@NotNull Response<GetFuelDataQuery.Data> response) {
+                // TODO Do sanity check of the response and its content
                 int level = response.getData().vehicle().drivetrain().fuelSystem().level();
                 int tankCapacity = response.getData().vehicle().drivetrain().fuelSystem().tankCapacity();
                 Log.d(LOG_TAG, "Response" + response.getData() + "\n");
